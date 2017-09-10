@@ -35,6 +35,7 @@ class MultiUDP:
     def on_data(self, data):
         print(data)
 
+
 class UniUDP:
     def __init__(self, addr, port, bufsize=4096):
         self.addr = addr
