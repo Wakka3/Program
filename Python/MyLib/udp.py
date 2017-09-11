@@ -36,29 +36,29 @@ class MultiUDP:
         print(data)
 
 
-class UniUDP:
-    def __init__(self, addr, port, bufsize=4096):
-        self.addr = addr
-        self.port = port
-        self.bufsize = bufsize
-        self.ip = get_ip()
+# class UniUDP:
+#     def __init__(self, addr, port, bufsize=4096):
+#         self.addr = addr
+#         self.port = port
+#         self.bufsize = bufsize
+#         self.ip = get_ip()
 
-    def send(self, addr=self.addr, port=self.port):
-        with closing(socket(AF_INET, SOCK_DGRAM)) as sock:
-            sock.sendto(msg.encode('utf8'), (addr, port))
-        return
+#     def send(self, addr=self.addr, port=self.port):
+#         with closing(socket(AF_INET, SOCK_DGRAM)) as sock:
+#             sock.sendto(msg.encode('utf8'), (addr, port))
+#         return
 
-    def recv(self, addr=self.addr, port=self.port, repeat=False):
-        with closing(socket(AF_INET, SOCK_DGRAM)) as sock:
-            sock.bind((addr, port))
-            while True:
-                data = sock.recv(bufsize).decode('utf8')
-                self.on_data(data)
-                if repeat is False:
-                    break
+#     def recv(self, addr=self.addr, port=self.port, repeat=False):
+#         with closing(socket(AF_INET, SOCK_DGRAM)) as sock:
+#             sock.bind((addr, port))
+#             while True:
+#                 data = sock.recv(bufsize).decode('utf8')
+#                 self.on_data(data)
+#                 if repeat is False:
+#                     break
 
-    def on_data(self, data):
-        print(data)
+#     def on_data(self, data):
+#         print(data)
 
 
 
